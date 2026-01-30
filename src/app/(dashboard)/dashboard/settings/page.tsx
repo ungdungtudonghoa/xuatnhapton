@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
@@ -101,12 +101,14 @@ export default function SettingsPage() {
     }
 
     // Load selected model from localStorage on mount
-    useState(() => {
-        const savedModel = localStorage.getItem('gemini_model')
-        if (savedModel) {
-            setSelectedModel(savedModel)
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const savedModel = localStorage.getItem('gemini_model')
+            if (savedModel) {
+                setSelectedModel(savedModel)
+            }
         }
-    })
+    }, [])
 
     return (
         <div className="space-y-6">
