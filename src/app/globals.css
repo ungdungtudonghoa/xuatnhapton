@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* Professional Color System - Tailwind v4 */
+@source "../**/*.{js,jsx,ts,tsx}";
+
+:root {
+  /* Soft, professional light theme */
+  --color-background: #ffffff;
+  --color-foreground: #1a1f2e;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1f2e;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a1f2e;
+
+  --color-primary: #4f7cff;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #2d9955;
+  --color-secondary-foreground: #ffffff;
+
+  --color-muted: #f5f7fa;
+  --color-muted-foreground: #64748b;
+
+  --color-accent: #f59e0b;
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #4f7cff;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+}
